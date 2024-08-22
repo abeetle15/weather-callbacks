@@ -23,7 +23,7 @@ function fetchData(city) {
     .then(response => response.json())
     .then(data => {
       const newDiv = document.createElement('div');
-      newDiv.className = 'info-container'
+      newDiv.className = 'info-container';
       newDiv.innerHTML = `
       <h2>${cityName()}: </h2>
       <ul> 
@@ -37,7 +37,12 @@ function fetchData(city) {
     })
     .catch(error => {
       console.log('Error with weather: ', error)
-      container.innerHTML = 'Error fetching weather'
+      const newDiv = document.createElement('div');
+      newDiv.className = 'info-container';
+      newDiv.innerHTML = `
+      <p>Error: unable to fetch ${cityName()}'s data </p>
+      `;
+      document.body.appendChild(newDiv);
     });
 
 
@@ -53,7 +58,12 @@ function fetchData(city) {
     })
     .catch(error => {
       console.log('Error with city: ', error)
-      container.innerHTML = 'Invalid city'
+      const newDiv = document.createElement('div');
+      newDiv.className = 'info-container';
+      newDiv.innerHTML = `
+      <p>Error: invalid City (${cityName()}) </p>
+      `;
+      document.body.appendChild(newDiv);
     });
   }
 
