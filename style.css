@@ -4,7 +4,7 @@
 * {
   margin: 0;
   font-family: monospace;
-  font-size: 16px;
+  font-size: 3.5vw;
 }
 body {
   line-height: 1.5;
@@ -14,6 +14,7 @@ body {
   align-items: center;
   padding: 8vw 0;
   gap: 3vh;
+  max-width: 100%;
 }
 img, picture, video, canvas, svg {
   display: block;
@@ -33,12 +34,19 @@ h1 {
   font-size: 1.6rem;
 }
 
+button {
+  all: unset;
+  border: black 2px solid;
+  padding: 0.2rem;
+  background-color: rgb(212, 212, 212);
+}
+
 h2 {
   font-size: 1.4rem;
 }
 
 .info-container {
-  width: 90%;
+  width: 80%;
   border: solid black 3px;
   display: flex;
   flex-direction: column;

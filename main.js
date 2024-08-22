@@ -1,11 +1,21 @@
 
 const submit = document.querySelector('#get');
+const userInput = document.querySelector('#city');
 
-submit.addEventListener('click', () => {
-  const userInput = document.querySelector('#city').value
-  fetchData(userInput);
+
+submit.addEventListener('click', fetchOnSubmit)
+userInput.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    submit.click();
+  }
 })
 
+function fetchOnSubmit() {
+  const value = userInput.value
+  fetchData(value);
+  value = '';
+}
 
 function fetchData(city) {
   const API_KEY = "ee9026ec030dc639f0b87dc659093b9d";
